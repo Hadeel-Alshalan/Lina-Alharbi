@@ -1,5 +1,4 @@
-<html class="scroll-smooth" dir="ltr" lang="en" style=""><head></head><body class="bg-surface font-body-md text-on-surface antialiased overflow-x-hidden" dir="ltr">```html
-
+<html class="scroll-smooth" dir="ltr" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=JetBrains+Mono&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/>
@@ -135,7 +134,6 @@
             transform: scale(1);
         }
 
-        /* Timeline Animations */
         .timeline-reveal-left { opacity: 0; transform: translateX(-30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
         .timeline-reveal-right { opacity: 0; transform: translateX(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
         [dir="rtl"] .timeline-reveal-left { transform: translateX(30px); }
@@ -148,10 +146,7 @@
             .timeline-reveal-left.active, .timeline-reveal-right.active { transform: translateY(0); }
         }
         
-        /* Language switcher active state */
         .lang-btn.active { color: #004ac6; font-weight: 700; }
-
-        /* Nav link active state */
         .nav-link.active { color: #004ac6; font-weight: 600; }
 
         #success-toast {
@@ -166,11 +161,12 @@
             transform: translateX(-50%) translateY(0);
         }
 
-        /* Section anchor offset for sticky header */
         section[id] {
             scroll-margin-top: 80px;
         }
     </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased overflow-x-hidden" dir="ltr">
 <!-- Success Notification -->
 <div class="bg-primary text-on-primary px-6 py-3 rounded-full shadow-2xl flex items-center gap-3" id="success-toast">
 <span class="material-symbols-outlined">check_circle</span>
@@ -187,10 +183,10 @@
 <a class="nav-link font-body-md text-on-surface-variant hover:text-primary transition-colors active" data-t="nav_home" href="#home">Home</a>
 <a class="nav-link font-body-md text-on-surface-variant hover:text-primary transition-colors" data-t="nav_about" href="#about">About</a>
 <a class="nav-link font-body-md text-on-surface-variant hover:text-primary transition-colors" data-t="nav_skills" href="#skills">Skills</a>
-<a class="nav-link font-body-md text-on-surface-variant hover:text-primary transition-colors" data-t="nav_projects" href="#projects">Projects</a><a class="nav-link font-body-md text-on-surface-variant hover:text-primary transition-colors" data-t="nav_certs" href="#certificates">Certificates</a>
+<a class="nav-link font-body-md text-on-surface-variant hover:text-primary transition-colors" data-t="nav_projects" href="#projects">Projects</a>
+<a class="nav-link font-body-md text-on-surface-variant hover:text-primary transition-colors" data-t="nav_certs" href="#certificates">Certificates</a>
 <a class="nav-link font-body-md text-on-surface-variant hover:text-primary transition-colors" data-t="nav_experience" href="#timeline">Experience</a>
 <a class="nav-link font-body-md text-on-surface-variant hover:text-primary transition-colors" data-t="nav_contact" href="#contact">Contact</a>
-<!-- Language Switcher -->
 <div class="flex items-center bg-surface-container rounded-full px-1 py-1 gap-1 border border-outline-variant/30">
 <button class="lang-btn text-xs px-2 py-1 rounded-full transition-all active" onclick="setLang('en')">EN</button>
 <div class="w-[1px] h-3 bg-outline-variant/50"></div>
@@ -331,7 +327,7 @@
 </div>
 </section>
 <!-- Projects Section -->
-<section class="py-section-gap bg-surface-container-low overflow-hidden" id="projects">
+<section class="py-section-gap bg-surface-container-low overflow-hidden opacity-100 visible" id="projects">
 <div class="container-max mx-auto px-gutter mb-12">
 <div class="flex flex-col md:flex-row justify-between items-end reveal active">
 <div>
@@ -352,7 +348,7 @@
 <span class="material-symbols-outlined [dir=rtl]:rotate-180">chevron_right</span>
 </button>
 <div class="carousel-track-container" id="carouselContainer">
-<div class="carousel-track" id="carouselTrack" style="transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1); transform: translateX(-3392px);">
+<div class="carousel-track" id="carouselTrack">
 <div class="carousel-item">
 <div class="rounded-3xl bg-white border border-outline-variant/30 overflow-hidden shadow-sm hover:shadow-xl h-full transition-shadow">
 <div class="aspect-[21/9] bg-surface-container-highest p-6 flex items-center justify-center relative overflow-hidden">
@@ -434,7 +430,6 @@
 </div>
 </div>
 </div>
-<!-- Carousel contents are populated/cloned by JS -->
 </div>
 </div>
 <div class="flex justify-center gap-3 mt-8" id="pagination">
@@ -452,10 +447,9 @@
 <p class="text-on-surface-variant max-w-xl mx-auto" data-t="timeline_desc">A combined view of my professional experience and academic background.</p>
 </div>
 <div class="relative">
-<!-- Center Line -->
 <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-outline-variant/30 -translate-x-1/2 [dir=rtl]:left-auto [dir=rtl]:right-4 md:[dir=rtl]:right-1/2 md:[dir=rtl]:translate-x-1/2" id="timeline-line"></div>
 <div class="space-y-12 relative">
-<!-- Item 1: Education (Left) -->
+<!-- Education -->
 <div class="relative flex flex-col md:flex-row items-center md:justify-start">
 <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0 w-full timeline-reveal-left active">
 <div class="bg-white p-6 rounded-lg border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow relative">
@@ -476,7 +470,7 @@
 <div class="absolute left-4 md:left-1/2 w-4 h-4 bg-primary border-4 border-surface rounded-full -translate-x-1/2 z-10 shadow-sm [dir=rtl]:left-auto [dir=rtl]:right-4 md:[dir=rtl]:right-1/2 md:[dir=rtl]:translate-x-1/2"></div>
 <div class="md:w-1/2 hidden md:block"></div>
 </div>
-<!-- Item 2: Experience (Right) -->
+<!-- Experience 1 -->
 <div class="relative flex flex-col md:flex-row items-center md:justify-end">
 <div class="md:w-1/2 hidden md:block"></div>
 <div class="absolute left-4 md:left-1/2 w-4 h-4 bg-primary border-4 border-surface rounded-full -translate-x-1/2 z-10 shadow-sm [dir=rtl]:left-auto [dir=rtl]:right-4 md:[dir=rtl]:right-1/2 md:[dir=rtl]:translate-x-1/2"></div>
@@ -493,7 +487,7 @@
 </div>
 </div>
 </div>
-<!-- Item 3: Experience (Left) -->
+<!-- Experience 2 -->
 <div class="relative flex flex-col md:flex-row items-center md:justify-start">
 <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0 w-full timeline-reveal-left active">
 <div class="bg-white p-6 rounded-lg border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow relative">
@@ -527,7 +521,7 @@
 <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
 <span class="material-symbols-outlined">verified</span>
 </div>
-<h3 class="font-bold mb-1" data-t="cert1_t">AWS Certified Cloud Practitioner</h3>
+<h3 class="font-bold mb-1">AWS Certified Cloud Practitioner</h3>
 <div class="flex flex-col mb-4">
 <span class="text-[10px] text-on-surface-variant uppercase font-semibold" data-t="cert_org_label">Issuing Organization</span>
 <p class="text-sm text-primary font-medium" data-t="cert1_org">Amazon Web Services (AWS)</p>
@@ -548,7 +542,7 @@
 <div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary mb-4">
 <span class="material-symbols-outlined">verified</span>
 </div>
-<h3 class="font-bold mb-1" data-t="cert2_t">TensorFlow Developer Certificate</h3>
+<h3 class="font-bold mb-1">TensorFlow Developer Certificate</h3>
 <div class="flex flex-col mb-4">
 <span class="text-[10px] text-on-surface-variant uppercase font-semibold" data-t="cert_org_label">Issuing Organization</span>
 <p class="text-sm text-secondary font-medium" data-t="cert2_org">Google</p>
@@ -569,7 +563,7 @@
 <div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary mb-4">
 <span class="material-symbols-outlined">verified</span>
 </div>
-<h3 class="font-bold mb-1" data-t="cert3_t">Microsoft Azure AI Fundamentals (AI-900)</h3>
+<h3 class="font-bold mb-1">Microsoft Azure AI Fundamentals (AI-900)</h3>
 <div class="flex flex-col mb-4">
 <span class="text-[10px] text-on-surface-variant uppercase font-semibold" data-t="cert_org_label">Issuing Organization</span>
 <p class="text-sm text-tertiary font-medium" data-t="cert3_org">Microsoft</p>
@@ -590,7 +584,7 @@
 <div class="w-10 h-10 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary mb-4">
 <span class="material-symbols-outlined">verified</span>
 </div>
-<h3 class="font-bold mb-1" data-t="cert4_t">Machine Learning Specialization</h3>
+<h3 class="font-bold mb-1">Machine Learning Specialization</h3>
 <div class="flex flex-col mb-4">
 <span class="text-[10px] text-on-surface-variant uppercase font-semibold" data-t="cert_org_label">Issuing Organization</span>
 <p class="text-sm text-primary font-medium" data-t="cert4_org">DeepLearning.AI</p>
@@ -705,10 +699,10 @@
             exp2_t: "AI Developer Intern", exp2_inst: "TechVision Solutions", exp2_date: "June 2024 - September 2024", exp2_d: "Model development, data cleaning, and testing.",
             cert_title: "Certificates", cert_desc: "Globally recognized certifications in AI and Cloud Computing.",
             cert_org_label: "Issuing Organization", cert_year_label: "Year", view_cert: "View Certificate",
-            cert1_t: "AWS Certified Cloud Practitioner", cert1_org: "Amazon Web Services (AWS)",
-            cert2_t: "TensorFlow Developer Certificate", cert2_org: "Google",
-            cert3_t: "Microsoft Azure AI Fundamentals (AI-900)", cert3_org: "Microsoft",
-            cert4_t: "Machine Learning Specialization", cert4_org: "DeepLearning.AI",
+            cert1_org: "Amazon Web Services (AWS)",
+            cert2_org: "Google",
+            cert3_org: "Microsoft",
+            cert4_org: "DeepLearning.AI",
             contact_title: "Let's Connect", contact_desc: "Open for project inquiries or professional collaborations.",
             f_email: "Email", f_loc: "Location", loc_val: "Riyadh, Saudi Arabia",
             form_name: "Full Name", name_ph: "Lina Alharbi", form_email: "Email", form_msg: "Message", msg_ph: "Hello, I'd like to discuss...", form_btn: "Send Message",
@@ -743,10 +737,10 @@
             exp2_t: "متدربة تطوير ذكاء اصطناعي", exp2_inst: "تيك فيجن للحلول", exp2_date: "يونيو 2024 - سبتمبر 2024", exp2_d: "تطوير النماذج، تنظيف البيانات، والاختبار.",
             cert_title: "الشهادات المهنية", cert_desc: "شهادات معتمدة عالمياً في مجالات الذكاء الاصطناعي والحوسبة السحابية.",
             cert_org_label: "الجهة المانحة", cert_year_label: "السنة", view_cert: "عرض الشهادة",
-            cert1_t: "شهادة ممارس سحابي معتمد من AWS", cert1_org: "أمازون لخدمات الويب (AWS)",
-            cert2_t: "شهادة مطور TensorFlow", cert2_org: "جوجل",
-            cert3_t: "أساسيات الذكاء الاصطناعي من مايكروسوفت آزور (AI-900)", cert3_org: "مايكروسوفت",
-            cert4_t: "تخصص تعلم الآلة", cert4_org: "DeepLearning.AI",
+            cert1_org: "أمازون لخدمات الويب (AWS)",
+            cert2_org: "جوجل",
+            cert3_org: "مايكروسوفت",
+            cert4_org: "DeepLearning.AI",
             contact_title: "دعنا نتواصل", contact_desc: "متاحة للاستفسارات حول المشاريع أو التعاون المهني.",
             f_email: "البريد الإلكتروني", f_loc: "الموقع", loc_val: "الرياض، المملكة العربية السعودية",
             form_name: "الاسم الكامل", name_ph: "لينا الحربي", form_email: "البريد الإلكتروني", form_msg: "الرسالة", msg_ph: "مرحباً، أود مناقشة...", form_btn: "إرسال الرسالة",
@@ -755,7 +749,6 @@
         }
     };
 
-    // --- Language Logic ---
     function setLang(lang) {
         const isRtl = lang === 'ar';
         document.documentElement.dir = isRtl ? 'rtl' : 'ltr';
@@ -783,13 +776,13 @@
             }
         });
 
-        // Recalculate carousel for the new direction
+        // Re-initialize/refresh position to ensure layout logic (offsets) is correct for the new direction
         if (typeof updatePosition === 'function') {
-            updatePosition(false);
+            setTimeout(() => updatePosition(false), 50);
         }
     }
 
-    // --- Smooth Scrolling with Offset ---
+    // --- Smooth Scrolling ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -809,13 +802,11 @@
         });
     });
 
-    // --- Active Link Highlighting (Scroll Spy) ---
     function updateActiveLink() {
         const sections = ['home', 'about', 'skills', 'projects', 'certificates', 'timeline', 'contact'];
         const navLinks = document.querySelectorAll('.nav-link');
-        
         let currentSection = '';
-        const navHeight = 100; // Buffer for intersection
+        const navHeight = 100;
 
         sections.forEach(id => {
             const section = document.getElementById(id);
@@ -836,27 +827,17 @@
         });
     }
 
-    // --- Reveal Animations ---
     function reveal() {
-        const standardReveals = document.querySelectorAll(".reveal");
-        const timelineLeftReveals = document.querySelectorAll(".timeline-reveal-left");
-        const timelineRightReveals = document.querySelectorAll(".timeline-reveal-right");
-        
+        const elements = document.querySelectorAll(".reveal, .timeline-reveal-left, .timeline-reveal-right");
         const windowHeight = window.innerHeight;
         const elementVisible = 100;
 
-        function checkVisible(elements) {
-            elements.forEach(el => {
-                const elementTop = el.getBoundingClientRect().top;
-                if (elementTop < windowHeight - elementVisible) {
-                    el.classList.add("active");
-                }
-            });
-        }
-
-        checkVisible(standardReveals);
-        checkVisible(timelineLeftReveals);
-        checkVisible(timelineRightReveals);
+        elements.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - elementVisible) {
+                el.classList.add("active");
+            }
+        });
         updateActiveLink();
     }
     window.addEventListener("scroll", reveal);
@@ -882,7 +863,7 @@
     function initInfinite() {
         originalItems.forEach(item => track.appendChild(item.cloneNode(true)));
         originalItems.forEach(item => track.prepend(item.cloneNode(true)));
-        updatePosition();
+        setTimeout(() => updatePosition(false), 50);
     }
 
     function getItems() {
@@ -896,7 +877,6 @@
         const containerWidth = container.offsetWidth;
         const centerOffset = (containerWidth - itemWidth) / 2;
         
-        const isRtl = document.documentElement.dir === 'rtl';
         currentTranslate = (currentIndex * itemWidth * -1) + centerOffset;
         prevTranslate = currentTranslate;
         
@@ -956,7 +936,6 @@
         dot.addEventListener('click', () => moveTo(itemsCount + i));
     });
 
-    // Touch/Mouse Events
     container.addEventListener('touchstart', touchStart);
     container.addEventListener('touchend', touchEnd);
     container.addEventListener('touchmove', touchMove);
@@ -1003,7 +982,7 @@
     window.addEventListener('resize', () => updatePosition(false));
     initInfinite();
 
-    // --- Contact Form Logic ---
+    // Form
     const contactForm = document.getElementById('contactForm');
     const toast = document.getElementById('success-toast');
 
@@ -1011,18 +990,29 @@
         e.preventDefault();
         toast.classList.add('show');
         contactForm.reset();
-        setTimeout(() => {
-            toast.classList.remove('show');
-        }, 3000);
+        setTimeout(() => toast.classList.remove('show'), 3000);
     });
 
-    // --- Mobile Menu Toggle ---
+    // Mobile Menu
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navLinksContainer = document.getElementById('nav-links-container');
-    
     mobileMenuBtn.addEventListener('click', () => {
         navLinksContainer.classList.toggle('hidden');
-        navLinksContainer.classList.toggle('flex');
-        navLinksContainer.classList.toggle('flex-col');
-        navLinksContainer.classList.toggle('absolute');
-        navLinks</script></body></html>
+        if(!navLinksContainer.classList.contains('hidden')) {
+            navLinksContainer.classList.add('flex', 'flex-col', 'absolute', 'top-full', 'left-0', 'w-full', 'bg-white', 'p-6', 'border-b', 'border-outline-variant');
+        } else {
+            navLinksContainer.classList.remove('flex', 'flex-col', 'absolute', 'top-full', 'left-0', 'w-full', 'bg-white', 'p-6', 'border-b', 'border-outline-variant');
+        }
+    });
+
+    // Ensure links close mobile menu
+    navLinksContainer.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth < 768) {
+                navLinksContainer.classList.add('hidden');
+                navLinksContainer.classList.remove('flex', 'flex-col', 'absolute', 'top-full', 'left-0', 'w-full', 'bg-white', 'p-6');
+            }
+        });
+    });
+</script>
+</body></html>
