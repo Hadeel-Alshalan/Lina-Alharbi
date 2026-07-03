@@ -1,0 +1,1028 @@
+<html class="scroll-smooth" dir="ltr" lang="en" style=""><head></head><body class="bg-surface font-body-md text-on-surface antialiased overflow-x-hidden" dir="ltr">```html
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=JetBrains+Mono&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        try {
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        "colors": {
+                            "on-secondary-fixed": "#001a42",
+                            "tertiary-fixed": "#d4e3ff",
+                            "on-surface": "#131b2e",
+                            "surface-container-high": "#e2e7ff",
+                            "primary-container": "#2563eb",
+                            "on-secondary": "#ffffff",
+                            "on-background": "#131b2e",
+                            "on-primary-container": "#eeefff",
+                            "secondary-fixed-dim": "#adc6ff",
+                            "on-tertiary-fixed": "#001c39",
+                            "on-error": "#ffffff",
+                            "on-primary-fixed": "#00174b",
+                            "primary-fixed-dim": "#b4c5ff",
+                            "primary": "#004ac6",
+                            "error-container": "#ffdad6",
+                            "surface-container-low": "#f2f3ff",
+                            "outline": "#737686",
+                            "surface-bright": "#faf8ff",
+                            "on-secondary-container": "#fefcff",
+                            "surface-variant": "#dae2fd",
+                            "on-surface-variant": "#434655",
+                            "secondary-fixed": "#d8e2ff",
+                            "on-tertiary-fixed-variant": "#004883",
+                            "surface-container-highest": "#dae2fd",
+                            "surface-container": "#eaedff",
+                            "background": "#faf8ff",
+                            "on-secondary-fixed-variant": "#004395",
+                            "outline-variant": "#c3c6d7",
+                            "secondary-container": "#2170e4",
+                            "on-primary": "#ffffff",
+                            "surface": "#faf8ff",
+                            "inverse-surface": "#283044",
+                            "tertiary-fixed-dim": "#a4c9ff",
+                            "surface-dim": "#d2d9f4",
+                            "surface-container-lowest": "#ffffff",
+                            "on-tertiary": "#ffffff",
+                            "primary-fixed": "#dbe1ff",
+                            "on-error-container": "#93000a",
+                            "tertiary": "#00569c",
+                            "tertiary-container": "#196fc0",
+                            "surface-tint": "#0053db",
+                            "secondary": "#0058be",
+                            "inverse-on-surface": "#eef0ff",
+                            "on-tertiary-container": "#ebf1ff",
+                            "on-primary-fixed-variant": "#003ea8",
+                            "inverse-primary": "#b4c5ff",
+                            "error": "#ba1a1a"
+                        },
+                        "borderRadius": {
+                            "DEFAULT": "0.5rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                        },
+                        "spacing": {
+                            "stack-sm": "16px",
+                            "section-gap": "128px",
+                            "container-max": "1200px",
+                            "gutter": "24px",
+                            "unit": "8px",
+                            "margin-mobile": "20px",
+                            "stack-md": "32px",
+                            "stack-lg": "64px"
+                        },
+                        "fontFamily": {
+                            "code-sm": ["JetBrains Mono"],
+                            "headline-xl": ["Inter", "IBM Plex Sans Arabic"],
+                            "body-md": ["Inter", "IBM Plex Sans Arabic"],
+                            "body-lg": ["Inter", "IBM Plex Sans Arabic"],
+                            "display-lg": ["Inter", "IBM Plex Sans Arabic"],
+                            "display-lg-mobile": ["Inter", "IBM Plex Sans Arabic"],
+                            "label-md": ["Inter", "IBM Plex Sans Arabic"],
+                            "headline-lg": ["Inter", "IBM Plex Sans Arabic"]
+                        },
+                        "fontSize": {
+                            "code-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                            "headline-xl": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                            "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                            "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                            "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                            "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                            "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                            "headline-lg": ["28px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                        }
+                    },
+                },
+            }
+        } catch (_e) {}
+    </script>
+<style>
+        [dir="rtl"] { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .glass-nav { backdrop-filter: blur(12px); background: rgba(250, 248, 255, 0.85); }
+        
+        .carousel-track-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            touch-action: pan-y;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            will-change: transform;
+            cursor: grab;
+        }
+        .carousel-track:active { cursor: grabbing; }
+        .carousel-item {
+            flex: 0 0 70%;
+            padding-inline: 16px;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.6s ease;
+            opacity: 0.5;
+            transform: scale(0.85);
+            user-select: none;
+        }
+        @media (max-width: 768px) {
+            .carousel-item { flex: 0 0 85%; }
+        }
+        .carousel-item.is-active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Timeline Animations */
+        .timeline-reveal-left { opacity: 0; transform: translateX(-30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .timeline-reveal-right { opacity: 0; transform: translateX(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        [dir="rtl"] .timeline-reveal-left { transform: translateX(30px); }
+        [dir="rtl"] .timeline-reveal-right { transform: translateX(-30px); }
+        .timeline-reveal-left.active, .timeline-reveal-right.active { opacity: 1; transform: translateX(0); }
+        
+        @media (max-width: 768px) {
+            .timeline-reveal-left, .timeline-reveal-right { transform: translateY(30px); }
+            [dir="rtl"] .timeline-reveal-left, [dir="rtl"] .timeline-reveal-right { transform: translateY(30px); }
+            .timeline-reveal-left.active, .timeline-reveal-right.active { transform: translateY(0); }
+        }
+        
+        /* Language switcher active state */
+        .lang-btn.active { color: #004ac6; font-weight: 700; }
+
+        /* Nav link active state */
+        .nav-link.active { color: #004ac6; font-weight: 600; }
+
+        #success-toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 999;
+        }
+        #success-toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Section anchor offset for sticky header */
+        section[id] {
+            scroll-margin-top: 80px;
+        }
+    </style>
+<!-- Success Notification -->
+<div class="bg-primary text-on-primary px-6 py-3 rounded-full shadow-2xl flex items-center gap-3" id="success-toast">
+<span class="material-symbols-outlined">check_circle</span>
+<span class="" data-t="toast_msg">Message Sent Successfully!</span>
+</div>
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 glass-nav border-b border-outline-variant/50">
+<div class="flex justify-between items-center max-w-[1200px] mx-auto px-gutter py-4">
+<div class="flex items-center gap-3 cursor-pointer" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+<div class="w-10 h-10 rounded-md bg-primary flex items-center justify-center text-on-primary font-bold text-xl">LA</div>
+<span class="font-headline-lg text-headline-lg font-bold text-primary">Lina.AI</span>
+</div>
+<div class="hidden md:flex gap-8 items-center" id="nav-links-container">
+<a class="nav-link font-body-md text-on-surface-variant hover:text-primary transition-colors active" data-t="nav_home" href="#home">Home</a>
+<a class="nav-link font-body-md text-on-surface-variant hover:text-primary transition-colors" data-t="nav_about" href="#about">About</a>
+<a class="nav-link font-body-md text-on-surface-variant hover:text-primary transition-colors" data-t="nav_skills" href="#skills">Skills</a>
+<a class="nav-link font-body-md text-on-surface-variant hover:text-primary transition-colors" data-t="nav_projects" href="#projects">Projects</a><a class="nav-link font-body-md text-on-surface-variant hover:text-primary transition-colors" data-t="nav_certs" href="#certificates">Certificates</a>
+<a class="nav-link font-body-md text-on-surface-variant hover:text-primary transition-colors" data-t="nav_experience" href="#timeline">Experience</a>
+<a class="nav-link font-body-md text-on-surface-variant hover:text-primary transition-colors" data-t="nav_contact" href="#contact">Contact</a>
+<!-- Language Switcher -->
+<div class="flex items-center bg-surface-container rounded-full px-1 py-1 gap-1 border border-outline-variant/30">
+<button class="lang-btn text-xs px-2 py-1 rounded-full transition-all active" onclick="setLang('en')">EN</button>
+<div class="w-[1px] h-3 bg-outline-variant/50"></div>
+<button class="lang-btn text-xs px-2 py-1 rounded-full transition-all" onclick="setLang('ar')">AR</button>
+</div>
+<a class="bg-primary text-on-primary px-6 py-2 rounded-xl font-medium hover:opacity-90 active:scale-95 transition-all" data-t="hire_me" href="#contact">Hire Me</a>
+</div>
+<div class="md:hidden flex items-center gap-4">
+<div class="flex items-center bg-surface-container rounded-full px-1 py-1 gap-1 border border-outline-variant/30">
+<button class="lang-btn text-[10px] px-2 py-1 rounded-full active" onclick="setLang('en')">EN</button>
+<button class="lang-btn text-[10px] px-2 py-1 rounded-full" onclick="setLang('ar')">AR</button>
+</div>
+<button class="p-2 text-on-surface" id="mobileMenuBtn">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-24 overflow-hidden" id="home">
+<div class="container-max mx-auto px-gutter relative z-10">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-high text-primary font-label-md mb-6 reveal active">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="" data-t="hero_badge">Open to New Opportunities</span>
+</div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg mb-4 reveal active" data-t="hero_title">Building <span class="text-primary">Intelligent Systems</span> from Data to Solutions</h1>
+<p class="text-headline-lg font-headline-lg text-on-surface-variant mb-8 reveal active">
+<span class="" data-t="hero_name">Lina Alharbi</span> | <span class="" data-t="hero_role">AI Developer</span>
+</p>
+<p class="text-body-lg text-on-surface-variant mb-8 reveal max-w-lg active" data-t="hero_desc">AI Developer passionate about building intelligent systems and transforming data into practical solutions.</p>
+<div class="flex flex-wrap gap-4 mb-12 reveal active">
+<a class="bg-primary text-on-primary px-8 py-4 rounded-xl font-semibold flex items-center gap-2 hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-95" download="Lina_Alharbi_CV.pdf" href="/cv.pdf">
+<span class="material-symbols-outlined">download</span>
+<span class="" data-t="hero_cv">Download CV</span>
+</a>
+<a class="border-2 border-primary text-primary px-8 py-4 rounded-xl font-semibold hover:bg-primary/5 transition-all active:scale-95" data-t="hero_contact" href="#contact">Contact Me</a>
+</div>
+<div class="flex gap-6 reveal active">
+<a class="text-on-surface-variant hover:text-primary transition-all scale-110 active:scale-125" href="https://github.com/linaalharbi" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>terminal</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary transition-all scale-110 active:scale-125" href="https://linkedin.com/in/linaalharbi" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>link</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary transition-all scale-110 active:scale-125" href="mailto:lina.alharbi.dev@gmail.com">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>mail</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-section-gap bg-surface-container-lowest" id="about">
+<div class="container-max mx-auto px-gutter">
+<div class="grid md:grid-cols-2 gap-stack-lg items-center">
+<div class="relative reveal active">
+<div class="aspect-square rounded-3xl overflow-hidden border border-outline-variant/30 shadow-sm bg-surface-container">
+<img alt="AI illustration" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbA0ha5tGBXY8e6Q4GHZ4lt5gI3AT6GcKwn2BeuYAjBmJ0rmmyrFZFbYVD326sQm07ize0DAcvHVswDOx9cNvqEzWi7ZQpJqPRWTMIfk0fhcfM0RjyVZNjr7rW7b1W7x9HaBdCE6QWMzy0I27KnMPbIwIa9inwM0PHC8_HcVRkbVxIgy4T9o3rYD76Zh41VWnfCxx6Ja95BAsMGA_AIAUetxdwe1wT9PIkKCG2_Xtz5uRSUsLaTo36vt7BPvBWpJ7cMUrPGnwVGMk"/>
+</div>
+<div class="absolute -bottom-6 -right-6 [dir=rtl]:-left-6 [dir=rtl]:-right-auto bg-white p-6 rounded-2xl shadow-xl border border-outline-variant/20 hidden md:block">
+<div class="text-primary font-display-lg text-4xl font-bold">5+</div>
+<div class="text-on-surface-variant font-label-md" data-t="about_stat">Production Models</div>
+</div>
+</div>
+<div class="reveal active">
+<h2 class="font-headline-xl text-headline-xl mb-6" data-t="about_title">Designing Intelligent <br/>Applications for the Real World</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6" data-t="about_desc">I'm an AI Developer with a strong interest in machine learning, computer vision, and data analysis. I enjoy designing intelligent applications that solve real-world problems using modern AI technologies.</p>
+<div class="grid grid-cols-2 gap-6">
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/30">
+<h4 class="font-bold text-primary mb-1" data-t="about_skill1_t">Problem Solver</h4>
+<p class="text-sm text-on-surface-variant" data-t="about_skill1_d">Analytical approach to complex technical challenges.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/30">
+<h4 class="font-bold text-primary mb-1" data-t="about_skill2_t">Collaborative</h4>
+<p class="text-sm text-on-surface-variant" data-t="about_skill2_d">Effective communication and teamwork in software teams.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="py-section-gap" id="skills">
+<div class="container-max mx-auto px-gutter">
+<div class="text-center mb-16 reveal active">
+<h2 class="font-headline-xl text-headline-xl mb-4" data-t="skills_title">Technical Skills</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto" data-t="skills_desc">A specialized toolkit focused on AI development and modern software engineering.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="p-6 rounded-2xl bg-white border border-outline-variant/30 shadow-sm reveal active">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined">code</span>
+</div>
+<h3 class="font-bold mb-3" data-t="skill_cat1">Programming</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-high rounded text-xs" data-t="skill_1_1">Python</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-xs" data-t="skill_1_2">Java</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-xs" data-t="skill_1_3">SQL</span>
+</div>
+</div>
+<div class="p-6 rounded-2xl bg-white border border-outline-variant/30 shadow-sm reveal active">
+<div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary mb-4">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<h3 class="font-bold mb-3" data-t="skill_cat2">AI &amp; ML</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-high rounded text-xs" data-t="skill_2_1">Machine Learning</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-xs" data-t="skill_2_2">Deep Learning</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-xs" data-t="skill_2_3">TensorFlow</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-xs" data-t="skill_2_4">PyTorch</span>
+</div>
+</div>
+<div class="p-6 rounded-2xl bg-white border border-outline-variant/30 shadow-sm reveal active">
+<div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary mb-4">
+<span class="material-symbols-outlined">bar_chart</span>
+</div>
+<h3 class="font-bold mb-3" data-t="skill_cat3">Data Science</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-high rounded text-xs" data-t="skill_3_1">Pandas</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-xs" data-t="skill_3_2">NumPy</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-xs" data-t="skill_3_3">Power BI</span>
+</div>
+</div>
+<div class="p-6 rounded-2xl bg-white border border-outline-variant/30 shadow-sm reveal active">
+<div class="w-10 h-10 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined">terminal</span>
+</div>
+<h3 class="font-bold mb-3" data-t="skill_cat4">Web &amp; Tools</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-high rounded text-xs" data-t="skill_4_1">Flask</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-xs" data-t="skill_4_2">FastAPI</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-xs" data-t="skill_4_3">Git</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-xs" data-t="skill_4_4">Docker</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section class="py-section-gap bg-surface-container-low overflow-hidden" id="projects">
+<div class="container-max mx-auto px-gutter mb-12">
+<div class="flex flex-col md:flex-row justify-between items-end reveal active">
+<div>
+<h2 class="font-headline-xl text-headline-xl mb-4" data-t="projects_title">Selected Works</h2>
+<p class="text-on-surface-variant" data-t="projects_desc">Practical applications of AI in attendance, healthcare, and business analytics.</p>
+</div>
+<a class="hidden md:flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all" href="https://github.com/linaalharbi" rel="noopener noreferrer" target="_blank">
+<span class="" data-t="github_view">View GitHub Repository</span>
+<span class="material-symbols-outlined [dir=rtl]:rotate-180">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="relative group max-w-full">
+<button class="absolute left-6 top-1/2 -translate-y-1/2 z-40 w-14 h-14 rounded-full bg-white/90 backdrop-blur-md shadow-xl border border-outline-variant/30 flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all opacity-0 group-hover:opacity-100 hidden md:flex focus:outline-none" id="prevBtn">
+<span class="material-symbols-outlined [dir=rtl]:rotate-180">chevron_left</span>
+</button>
+<button class="absolute right-6 top-1/2 -translate-y-1/2 z-40 w-14 h-14 rounded-full bg-white/90 backdrop-blur-md shadow-xl border border-outline-variant/30 flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all opacity-0 group-hover:opacity-100 hidden md:flex focus:outline-none" id="nextBtn">
+<span class="material-symbols-outlined [dir=rtl]:rotate-180">chevron_right</span>
+</button>
+<div class="carousel-track-container" id="carouselContainer">
+<div class="carousel-track" id="carouselTrack" style="transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1); transform: translateX(-3392px);">
+<div class="carousel-item">
+<div class="rounded-3xl bg-white border border-outline-variant/30 overflow-hidden shadow-sm hover:shadow-xl h-full transition-shadow">
+<div class="aspect-[21/9] bg-surface-container-highest p-6 flex items-center justify-center relative overflow-hidden">
+<span class="material-symbols-outlined text-primary text-6xl opacity-20">query_stats</span>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-lg text-2xl font-bold" data-t="proj3_t">Sales Forecast Dashboard</h3>
+<div class="flex gap-2">
+<span class="text-[10px] font-bold px-2 py-1 bg-primary/10 text-primary rounded-lg uppercase tracking-wider" data-t="tag_analytics">Analytics</span>
+<span class="text-[10px] font-bold px-2 py-1 bg-secondary/10 text-secondary rounded-lg uppercase tracking-wider" data-t="tag_business">Business</span>
+</div>
+</div>
+<p class="text-on-surface-variant mb-6" data-t="proj3_d">Sales analysis and prediction dashboard built with Power BI and Scikit-learn. Interactive charts for analysis.</p>
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-medium">Power BI</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-medium">Pandas</span>
+</div>
+<div class="flex gap-4">
+<a class="text-primary hover:underline text-sm font-bold flex items-center gap-1" href="https://github.com/linaalharbi" target="_blank">GitHub <span class="material-symbols-outlined text-sm">open_in_new</span></a>
+<a class="text-primary hover:underline text-sm font-bold flex items-center gap-1" href="#">Demo <span class="material-symbols-outlined text-sm">play_circle</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="carousel-item">
+<div class="rounded-3xl bg-white border border-outline-variant/30 overflow-hidden shadow-sm hover:shadow-xl h-full transition-shadow">
+<div class="aspect-[21/9] bg-surface-container-highest p-6 flex items-center justify-center relative overflow-hidden">
+<span class="material-symbols-outlined text-primary text-6xl opacity-20">medical_services</span>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-lg text-2xl font-bold" data-t="proj2_t">AI Medical Diagnosis Assistant</h3>
+<div class="flex gap-2">
+<span class="text-[10px] font-bold px-2 py-1 bg-primary/10 text-primary rounded-lg uppercase tracking-wider" data-t="tag_health">Health</span>
+<span class="text-[10px] font-bold px-2 py-1 bg-secondary/10 text-secondary rounded-lg uppercase tracking-wider" data-t="tag_dl">Deep Learning</span>
+</div>
+</div>
+<p class="text-on-surface-variant mb-6" data-t="proj2_d">Disease prediction site using TensorFlow and Flask. Features deep learning model for health recommendations.</p>
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-medium">TensorFlow</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-medium">Flask</span>
+</div>
+<div class="flex gap-4">
+<a class="text-primary hover:underline text-sm font-bold flex items-center gap-1" href="https://github.com/linaalharbi" target="_blank">GitHub <span class="material-symbols-outlined text-sm">open_in_new</span></a>
+<a class="text-primary hover:underline text-sm font-bold flex items-center gap-1" href="#">Demo <span class="material-symbols-outlined text-sm">play_circle</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="carousel-item">
+<div class="rounded-3xl bg-white border border-outline-variant/30 overflow-hidden shadow-sm hover:shadow-xl h-full transition-shadow">
+<div class="aspect-[21/9] bg-surface-container-highest p-6 flex items-center justify-center relative overflow-hidden">
+<span class="material-symbols-outlined text-primary text-6xl opacity-20">face</span>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-lg text-2xl font-bold" data-t="proj1_t">Smart Attendance System</h3>
+<div class="flex gap-2">
+<span class="text-[10px] font-bold px-2 py-1 bg-primary/10 text-primary rounded-lg uppercase tracking-wider" data-t="tag_ai">AI</span>
+<span class="text-[10px] font-bold px-2 py-1 bg-secondary/10 text-secondary rounded-lg uppercase tracking-wider" data-t="tag_vision">Vision</span>
+</div>
+</div>
+<p class="text-on-surface-variant mb-6" data-t="proj1_d">AI-based face recognition system using Python, OpenCV, Face Recognition, Flask, and SQLite.</p>
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-medium">OpenCV</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-medium">Flask</span>
+</div>
+<div class="flex gap-4">
+<a class="text-primary hover:underline text-sm font-bold flex items-center gap-1" href="https://github.com/linaalharbi" target="_blank">GitHub <span class="material-symbols-outlined text-sm">open_in_new</span></a>
+<a class="text-primary hover:underline text-sm font-bold flex items-center gap-1" href="#">Demo <span class="material-symbols-outlined text-sm">play_circle</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Carousel contents are populated/cloned by JS -->
+</div>
+</div>
+<div class="flex justify-center gap-3 mt-8" id="pagination">
+<button class="dot h-3 rounded-full transition-all duration-300 bg-outline-variant/30 w-3"></button>
+<button class="dot h-3 rounded-full transition-all duration-300 bg-primary w-6"></button>
+<button class="dot h-3 rounded-full transition-all duration-300 bg-outline-variant/30 w-3"></button>
+</div>
+</div>
+</section>
+<!-- Timeline Section -->
+<section class="py-section-gap overflow-hidden" id="timeline">
+<div class="container-max mx-auto px-gutter">
+<div class="text-center mb-16 reveal active">
+<h2 class="font-headline-xl text-headline-xl mb-4" data-t="timeline_title">Professional Path</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto" data-t="timeline_desc">A combined view of my professional experience and academic background.</p>
+</div>
+<div class="relative">
+<!-- Center Line -->
+<div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-outline-variant/30 -translate-x-1/2 [dir=rtl]:left-auto [dir=rtl]:right-4 md:[dir=rtl]:right-1/2 md:[dir=rtl]:translate-x-1/2" id="timeline-line"></div>
+<div class="space-y-12 relative">
+<!-- Item 1: Education (Left) -->
+<div class="relative flex flex-col md:flex-row items-center md:justify-start">
+<div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0 w-full timeline-reveal-left active">
+<div class="bg-white p-6 rounded-lg border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow relative">
+<div class="flex items-center gap-2 mb-2 md:justify-end">
+<span class="material-symbols-outlined text-primary text-xl">school</span>
+<span class="text-xs font-bold text-primary uppercase tracking-wider" data-t="tag_edu">Education</span>
+</div>
+<h3 class="font-headline-lg text-xl mb-1" data-t="edu1_t">B.S. in Computer Science</h3>
+<p class="text-primary font-bold mb-3"><span class="" data-t="edu1_inst">King Saud University</span> | 2025</p>
+<div class="inline-flex gap-4 md:justify-end">
+<div class="bg-surface-container-low px-3 py-1 rounded-md border border-outline-variant/20 flex flex-col">
+<span class="text-[10px] text-on-surface-variant uppercase font-semibold">GPA</span>
+<span class="font-bold text-sm">4.78 / 5.00</span>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute left-4 md:left-1/2 w-4 h-4 bg-primary border-4 border-surface rounded-full -translate-x-1/2 z-10 shadow-sm [dir=rtl]:left-auto [dir=rtl]:right-4 md:[dir=rtl]:right-1/2 md:[dir=rtl]:translate-x-1/2"></div>
+<div class="md:w-1/2 hidden md:block"></div>
+</div>
+<!-- Item 2: Experience (Right) -->
+<div class="relative flex flex-col md:flex-row items-center md:justify-end">
+<div class="md:w-1/2 hidden md:block"></div>
+<div class="absolute left-4 md:left-1/2 w-4 h-4 bg-primary border-4 border-surface rounded-full -translate-x-1/2 z-10 shadow-sm [dir=rtl]:left-auto [dir=rtl]:right-4 md:[dir=rtl]:right-1/2 md:[dir=rtl]:translate-x-1/2"></div>
+<div class="md:w-1/2 md:pl-12 pl-12 w-full timeline-reveal-right active">
+<div class="bg-white p-6 rounded-lg border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-xl">work</span>
+<span class="text-xs font-bold text-primary uppercase tracking-wider" data-t="tag_exp">Experience</span>
+</div>
+<span class="text-sm font-bold text-on-surface-variant mb-1 block" data-t="exp1_date">January 2025 - Present</span>
+<h3 class="font-headline-lg text-xl mb-1" data-t="exp1_t">Machine Learning Engineer</h3>
+<p class="text-primary font-medium mb-3" data-t="exp1_inst">Future Data Lab</p>
+<p class="text-on-surface-variant text-sm" data-t="exp1_d">Developing AI solutions, data analysis, and model deployment.</p>
+</div>
+</div>
+</div>
+<!-- Item 3: Experience (Left) -->
+<div class="relative flex flex-col md:flex-row items-center md:justify-start">
+<div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0 w-full timeline-reveal-left active">
+<div class="bg-white p-6 rounded-lg border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow relative">
+<div class="flex items-center gap-2 mb-2 md:justify-end">
+<span class="material-symbols-outlined text-primary text-xl">work</span>
+<span class="text-xs font-bold text-primary uppercase tracking-wider" data-t="tag_exp">Experience</span>
+</div>
+<span class="text-sm font-bold text-on-surface-variant mb-1 block" data-t="exp2_date">June 2024 - September 2024</span>
+<h3 class="font-headline-lg text-xl mb-1" data-t="exp2_t">AI Developer Intern</h3>
+<p class="text-primary font-medium mb-3" data-t="exp2_inst">TechVision Solutions</p>
+<p class="text-on-surface-variant text-sm" data-t="exp2_d">Model development, data cleaning, and testing.</p>
+</div>
+</div>
+<div class="absolute left-4 md:left-1/2 w-4 h-4 bg-primary border-4 border-surface rounded-full -translate-x-1/2 z-10 shadow-sm [dir=rtl]:left-auto [dir=rtl]:right-4 md:[dir=rtl]:right-1/2 md:[dir=rtl]:translate-x-1/2"></div>
+<div class="md:w-1/2 hidden md:block"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Certificates Section -->
+<section class="py-section-gap" id="certificates">
+<div class="container-max mx-auto px-gutter">
+<div class="text-center mb-16 reveal active">
+<h2 class="font-headline-xl text-headline-xl mb-4" data-t="cert_title">Certificates</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto" data-t="cert_desc">Globally recognized certifications in AI and Cloud Computing.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Cert 1 -->
+<div class="p-6 rounded-2xl bg-white border border-outline-variant/30 shadow-sm reveal active flex flex-col h-full">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<h3 class="font-bold mb-1" data-t="cert1_t">AWS Certified Cloud Practitioner</h3>
+<div class="flex flex-col mb-4">
+<span class="text-[10px] text-on-surface-variant uppercase font-semibold" data-t="cert_org_label">Issuing Organization</span>
+<p class="text-sm text-primary font-medium" data-t="cert1_org">Amazon Web Services (AWS)</p>
+</div>
+<div class="flex flex-col mb-6">
+<span class="text-[10px] text-on-surface-variant uppercase font-semibold" data-t="cert_year_label">Year</span>
+<p class="text-xs text-on-surface-variant">2025</p>
+</div>
+<div class="mt-auto">
+<a class="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all" href="https://www.credly.com/" target="_blank">
+<span data-t="view_cert">View Certificate</span>
+<span class="material-symbols-outlined text-sm [dir=rtl]:rotate-180">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Cert 2 -->
+<div class="p-6 rounded-2xl bg-white border border-outline-variant/30 shadow-sm reveal active flex flex-col h-full">
+<div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary mb-4">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<h3 class="font-bold mb-1" data-t="cert2_t">TensorFlow Developer Certificate</h3>
+<div class="flex flex-col mb-4">
+<span class="text-[10px] text-on-surface-variant uppercase font-semibold" data-t="cert_org_label">Issuing Organization</span>
+<p class="text-sm text-secondary font-medium" data-t="cert2_org">Google</p>
+</div>
+<div class="flex flex-col mb-6">
+<span class="text-[10px] text-on-surface-variant uppercase font-semibold" data-t="cert_year_label">Year</span>
+<p class="text-xs text-on-surface-variant">2025</p>
+</div>
+<div class="mt-auto">
+<a class="inline-flex items-center gap-2 text-secondary font-semibold text-sm hover:gap-3 transition-all" href="https://www.tensorflow.org/certificate" target="_blank">
+<span data-t="view_cert">View Certificate</span>
+<span class="material-symbols-outlined text-sm [dir=rtl]:rotate-180">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Cert 3 -->
+<div class="p-6 rounded-2xl bg-white border border-outline-variant/30 shadow-sm reveal active flex flex-col h-full">
+<div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary mb-4">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<h3 class="font-bold mb-1" data-t="cert3_t">Microsoft Azure AI Fundamentals (AI-900)</h3>
+<div class="flex flex-col mb-4">
+<span class="text-[10px] text-on-surface-variant uppercase font-semibold" data-t="cert_org_label">Issuing Organization</span>
+<p class="text-sm text-tertiary font-medium" data-t="cert3_org">Microsoft</p>
+</div>
+<div class="flex flex-col mb-6">
+<span class="text-[10px] text-on-surface-variant uppercase font-semibold" data-t="cert_year_label">Year</span>
+<p class="text-xs text-on-surface-variant">2024</p>
+</div>
+<div class="mt-auto">
+<a class="inline-flex items-center gap-2 text-tertiary font-semibold text-sm hover:gap-3 transition-all" href="https://learn.microsoft.com/" target="_blank">
+<span data-t="view_cert">View Certificate</span>
+<span class="material-symbols-outlined text-sm [dir=rtl]:rotate-180">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Cert 4 -->
+<div class="p-6 rounded-2xl bg-white border border-outline-variant/30 shadow-sm reveal active flex flex-col h-full">
+<div class="w-10 h-10 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<h3 class="font-bold mb-1" data-t="cert4_t">Machine Learning Specialization</h3>
+<div class="flex flex-col mb-4">
+<span class="text-[10px] text-on-surface-variant uppercase font-semibold" data-t="cert_org_label">Issuing Organization</span>
+<p class="text-sm text-primary font-medium" data-t="cert4_org">DeepLearning.AI</p>
+</div>
+<div class="flex flex-col mb-6">
+<span class="text-[10px] text-on-surface-variant uppercase font-semibold" data-t="cert_year_label">Year</span>
+<p class="text-xs text-on-surface-variant">2024</p>
+</div>
+<div class="mt-auto">
+<a class="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all" href="https://www.coursera.org/" target="_blank">
+<span data-t="view_cert">View Certificate</span>
+<span class="material-symbols-outlined text-sm [dir=rtl]:rotate-180">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-section-gap bg-surface-container-lowest" id="contact">
+<div class="container-max mx-auto px-gutter">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-16 reveal active">
+<h2 class="font-display-lg-mobile text-display-lg-mobile mb-4" data-t="contact_title">Let's Connect</h2>
+<p class="text-on-surface-variant" data-t="contact_desc">Open for project inquiries or professional collaborations.</p>
+</div>
+<div class="grid md:grid-cols-5 gap-stack-md">
+<div class="md:col-span-2 space-y-6 reveal active">
+<a class="p-6 rounded-2xl bg-white border border-outline-variant/30 flex items-center gap-4 hover:border-primary/50 transition-all group" href="mailto:lina.alharbi.dev@gmail.com">
+<div class="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant uppercase" data-t="f_email">Email</p>
+<p class="font-bold text-sm">lina.alharbi.dev@gmail.com</p>
+</div>
+</a>
+<div class="p-6 rounded-2xl bg-white border border-outline-variant/30 flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant uppercase" data-t="f_loc">Location</p>
+<p class="font-bold text-sm" data-t="loc_val">Riyadh, Saudi Arabia</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-3 reveal active">
+<form class="bg-white p-8 rounded-3xl border border-outline-variant/30 shadow-sm space-y-4" id="contactForm">
+<div class="grid sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-on-surface-variant mb-1" data-t="form_name">Full Name</label>
+<input class="w-full bg-surface border border-outline-variant/30 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent px-4 py-3 outline-none" data-tp="name_ph" id="form-name" placeholder="Lina Alharbi" required="" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-on-surface-variant mb-1" data-t="form_email">Email</label>
+<input class="w-full bg-surface border border-outline-variant/30 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent px-4 py-3 outline-none" id="form-email" placeholder="lina@example.com" required="" type="email"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-on-surface-variant mb-1" data-t="form_msg">Message</label>
+<textarea class="w-full bg-surface border border-outline-variant/30 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent px-4 py-3 outline-none" data-tp="msg_ph" id="form-message" placeholder="Hello, I'd like to discuss..." required="" rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-bold hover:shadow-lg transition-all active:scale-95" data-t="form_btn" type="submit">Send Message</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface py-stack-lg border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-[1200px] mx-auto px-gutter gap-stack-md">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center text-on-primary font-bold text-sm">LA</div>
+<span class="font-semibold text-on-surface" data-t="footer_name">Lina Alharbi</span>
+</div>
+<p class="text-on-surface-variant text-sm"><span class="" data-t="footer_copy">© 2025 Lina Alharbi. All rights reserved.</span></p>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-all text-sm" href="https://github.com/linaalharbi" target="_blank">GitHub</a>
+<a class="text-on-surface-variant hover:text-primary transition-all text-sm" href="https://linkedin.com/in/linaalharbi" target="_blank">LinkedIn</a>
+</div>
+</div>
+</footer>
+<script>
+    const translations = {
+        en: {
+            nav_home: "Home", nav_about: "About", nav_skills: "Skills", nav_projects: "Projects", nav_certs: "Certificates", nav_experience: "Experience", nav_contact: "Contact", hire_me: "Hire Me",
+            hero_badge: "Open to New Opportunities", hero_title: 'Building <span class="text-primary">Intelligent Systems</span> from Data to Solutions',
+            hero_name: "Lina Alharbi", hero_role: "AI Developer", hero_desc: "AI Developer passionate about building intelligent systems and transforming data into practical solutions.",
+            hero_cv: "Download CV", hero_contact: "Contact Me",
+            about_stat: "Production Models", about_title: "Designing Intelligent <br>Applications for the Real World",
+            about_desc: "I'm an AI Developer with a strong interest in machine learning, computer vision, and data analysis. I enjoy designing intelligent applications that solve real-world problems using modern AI technologies.",
+            about_skill1_t: "Problem Solver", about_skill1_d: "Analytical approach to complex technical challenges.",
+            about_skill2_t: "Collaborative", about_skill2_d: "Effective communication and teamwork in software teams.",
+            skills_title: "Technical Skills", skills_desc: "A specialized toolkit focused on AI development and modern software engineering.",
+            skill_cat1: "Programming", skill_cat2: "AI & ML", skill_cat3: "Data Science", skill_cat4: "Web & Tools",
+            skill_1_1: "Python", skill_1_2: "Java", skill_1_3: "SQL",
+            skill_2_1: "Machine Learning", skill_2_2: "Deep Learning", skill_2_3: "TensorFlow", skill_2_4: "PyTorch",
+            skill_3_1: "Pandas", skill_3_2: "NumPy", skill_3_3: "Power BI",
+            skill_4_1: "Flask", skill_4_2: "FastAPI", skill_4_3: "Git", skill_4_4: "Docker",
+            projects_title: "Selected Works", projects_desc: "Practical applications of AI in attendance, healthcare, and business analytics.",
+            github_view: "View GitHub Repository",
+            proj1_t: "Smart Attendance System", proj1_d: "AI-based face recognition system using Python, OpenCV, Face Recognition, Flask, and SQLite.",
+            proj2_t: "AI Medical Diagnosis Assistant", proj2_d: "Disease prediction site using TensorFlow and Flask. Features deep learning model for health recommendations.",
+            proj3_t: "Sales Forecast Dashboard", proj3_d: "Sales analysis and prediction dashboard built with Power BI and Scikit-learn. Interactive charts for analysis.",
+            tag_ai: "AI", tag_vision: "Vision", tag_health: "Health", tag_dl: "Deep Learning", tag_analytics: "Analytics", tag_business: "Business",
+            timeline_title: "Professional Path", timeline_desc: "A combined view of my professional experience and academic background.",
+            tag_edu: "Education", tag_exp: "Experience",
+            edu1_t: "B.S. in Computer Science", edu1_inst: "King Saud University",
+            exp1_t: "Machine Learning Engineer", exp1_inst: "Future Data Lab", exp1_date: "January 2025 - Present", exp1_d: "Developing AI solutions, data analysis, and model deployment.",
+            exp2_t: "AI Developer Intern", exp2_inst: "TechVision Solutions", exp2_date: "June 2024 - September 2024", exp2_d: "Model development, data cleaning, and testing.",
+            cert_title: "Certificates", cert_desc: "Globally recognized certifications in AI and Cloud Computing.",
+            cert_org_label: "Issuing Organization", cert_year_label: "Year", view_cert: "View Certificate",
+            cert1_t: "AWS Certified Cloud Practitioner", cert1_org: "Amazon Web Services (AWS)",
+            cert2_t: "TensorFlow Developer Certificate", cert2_org: "Google",
+            cert3_t: "Microsoft Azure AI Fundamentals (AI-900)", cert3_org: "Microsoft",
+            cert4_t: "Machine Learning Specialization", cert4_org: "DeepLearning.AI",
+            contact_title: "Let's Connect", contact_desc: "Open for project inquiries or professional collaborations.",
+            f_email: "Email", f_loc: "Location", loc_val: "Riyadh, Saudi Arabia",
+            form_name: "Full Name", name_ph: "Lina Alharbi", form_email: "Email", form_msg: "Message", msg_ph: "Hello, I'd like to discuss...", form_btn: "Send Message",
+            footer_name: "Lina Alharbi", footer_copy: "© 2025 Lina Alharbi. All rights reserved.",
+            toast_msg: "Message Sent Successfully!"
+        },
+        ar: {
+            nav_home: "الرئيسية", nav_about: "عني", nav_skills: "المهارات", nav_projects: "المشاريع", nav_certs: "الشهادات", nav_experience: "الخبرة", nav_contact: "تواصل معي", hire_me: "وظفني",
+            hero_badge: "متاحة لفرص جديدة", hero_title: 'بناء <span class="text-primary">أنظمة ذكية</span> من البيانات إلى الحلول',
+            hero_name: "لينا الحربي", hero_role: "مطورة ذكاء اصطناعي", hero_desc: "مطورة ذكاء اصطناعي شغوفة ببناء أنظمة ذكية وتحويل البيانات إلى حلول عملية.",
+            hero_cv: "تحميل السيرة الذاتية", hero_contact: "اتصل بي",
+            about_stat: "نماذج قيد الإنتاج", about_title: "تصميم تطبيقات ذكية <br>للعالم الحقيقي",
+            about_desc: "أنا مطورة ذكاء اصطناعي لدي اهتمام قوي بتعلم الآلة، والرؤية الحاسوبية، وتحليل البيانات. أستمتع بتصميم تطبيقات ذكية تحل مشكلات العالم الحقيقي باستخدام تقنيات الذكاء الاصطناعي الحديثة.",
+            about_skill1_t: "حلالة مشكلات", about_skill1_d: "نهج تحليلي للتحديات التقنية المعقدة.",
+            about_skill2_t: "متعاونة", about_skill2_d: "تواصل فعال وعمل جماعي ضمن الفرق البرمجية.",
+            skills_title: "المهارات التقنية", skills_desc: "مجموعة مهارات متخصصة تركز على تطوير الذكاء الاصطناعي وهندسة البرمجيات الحديثة.",
+            skill_cat1: "البرمجة", skill_cat2: "الذكاء الاصطناعي", skill_cat3: "علم البيانات", skill_cat4: "الويب والأدوات",
+            skill_1_1: "بايثون", skill_1_2: "جافا", skill_1_3: "SQL",
+            skill_2_1: "تعلم الآلة", skill_2_2: "التعلم العميق", skill_2_3: "TensorFlow", skill_2_4: "PyTorch",
+            skill_3_1: "Pandas", skill_3_2: "NumPy", skill_3_3: "Power BI",
+            skill_4_1: "Flask", skill_4_2: "FastAPI", skill_4_3: "Git", skill_4_4: "Docker",
+            projects_title: "أعمال مختارة", projects_desc: "تطبيقات عملية للذكاء الاصطناعي في الحضور، والرعاية الصحية، وتحليلات الأعمال.",
+            github_view: "عرض مستودع GitHub",
+            proj1_t: "نظام التحضير الذكي", proj1_d: "نظام التعرف على الوجوه القائم على الذكاء الاصطناعي باستخدام Python و OpenCV و Flask.",
+            proj2_t: "مساعد التشخيص الطبي بالذكاء الاصطناعي", proj2_d: "موقع للتنبؤ بالأمراض باستخدام TensorFlow و Flask. يتميز بنموذج تعلم عميق للتوصيات الصحية.",
+            proj3_t: "لوحة توقعات المبيعات", proj3_d: "لوحة تحليل وتنبؤ بالمبيعات تم بناؤها باستخدام Power BI و Scikit-learn.",
+            tag_ai: "ذكاء اصطناعي", tag_vision: "رؤية حاسوبية", tag_health: "صحة", tag_dl: "تعلم عميق", tag_analytics: "تحليلات", tag_business: "أعمال",
+            timeline_title: "المسار المهني", timeline_desc: "نظرة شاملة لخبرتي المهنية وخلفيتي الأكاديمية.",
+            tag_edu: "التعليم", tag_exp: "الخبرة",
+            edu1_t: "بكالوريوس في علوم الحاسب", edu1_inst: "جامعة الملك سعود",
+            exp1_t: "مهندسة تعلم آلة", exp1_inst: "فيوتشر داتا لاب", exp1_date: "يناير 2025 - الحالي", exp1_d: "تطوير حلول الذكاء الاصطناعي، تحليل البيانات، ونشر النماذج.",
+            exp2_t: "متدربة تطوير ذكاء اصطناعي", exp2_inst: "تيك فيجن للحلول", exp2_date: "يونيو 2024 - سبتمبر 2024", exp2_d: "تطوير النماذج، تنظيف البيانات، والاختبار.",
+            cert_title: "الشهادات المهنية", cert_desc: "شهادات معتمدة عالمياً في مجالات الذكاء الاصطناعي والحوسبة السحابية.",
+            cert_org_label: "الجهة المانحة", cert_year_label: "السنة", view_cert: "عرض الشهادة",
+            cert1_t: "شهادة ممارس سحابي معتمد من AWS", cert1_org: "أمازون لخدمات الويب (AWS)",
+            cert2_t: "شهادة مطور TensorFlow", cert2_org: "جوجل",
+            cert3_t: "أساسيات الذكاء الاصطناعي من مايكروسوفت آزور (AI-900)", cert3_org: "مايكروسوفت",
+            cert4_t: "تخصص تعلم الآلة", cert4_org: "DeepLearning.AI",
+            contact_title: "دعنا نتواصل", contact_desc: "متاحة للاستفسارات حول المشاريع أو التعاون المهني.",
+            f_email: "البريد الإلكتروني", f_loc: "الموقع", loc_val: "الرياض، المملكة العربية السعودية",
+            form_name: "الاسم الكامل", name_ph: "لينا الحربي", form_email: "البريد الإلكتروني", form_msg: "الرسالة", msg_ph: "مرحباً، أود مناقشة...", form_btn: "إرسال الرسالة",
+            footer_name: "لينا الحربي", footer_copy: "© 2025 لينا الحربي. جميع الحقوق محفوظة.",
+            toast_msg: "تم إرسال الرسالة بنجاح!"
+        }
+    };
+
+    // --- Language Logic ---
+    function setLang(lang) {
+        const isRtl = lang === 'ar';
+        document.documentElement.dir = isRtl ? 'rtl' : 'ltr';
+        document.documentElement.lang = lang;
+        
+        document.querySelectorAll('[data-t]').forEach(el => {
+            const key = el.getAttribute('data-t');
+            if (translations[lang][key]) {
+                el.innerHTML = translations[lang][key];
+            }
+        });
+
+        document.querySelectorAll('[data-tp]').forEach(el => {
+            const key = el.getAttribute('data-tp');
+            if (translations[lang][key]) {
+                el.placeholder = translations[lang][key];
+            }
+        });
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            if (btn.innerText.toLowerCase() === lang) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+
+        // Recalculate carousel for the new direction
+        if (typeof updatePosition === 'function') {
+            updatePosition(false);
+        }
+    }
+
+    // --- Smooth Scrolling with Offset ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if(targetId === '#') return;
+            const target = document.querySelector(targetId);
+            if (target) {
+                const navHeight = 80;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // --- Active Link Highlighting (Scroll Spy) ---
+    function updateActiveLink() {
+        const sections = ['home', 'about', 'skills', 'projects', 'certificates', 'timeline', 'contact'];
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        let currentSection = '';
+        const navHeight = 100; // Buffer for intersection
+
+        sections.forEach(id => {
+            const section = document.getElementById(id);
+            if (section) {
+                const top = section.offsetTop - navHeight;
+                if (window.scrollY >= top) {
+                    currentSection = id;
+                }
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const href = link.getAttribute('href').substring(1);
+            if (href === currentSection) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // --- Reveal Animations ---
+    function reveal() {
+        const standardReveals = document.querySelectorAll(".reveal");
+        const timelineLeftReveals = document.querySelectorAll(".timeline-reveal-left");
+        const timelineRightReveals = document.querySelectorAll(".timeline-reveal-right");
+        
+        const windowHeight = window.innerHeight;
+        const elementVisible = 100;
+
+        function checkVisible(elements) {
+            elements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - elementVisible) {
+                    el.classList.add("active");
+                }
+            });
+        }
+
+        checkVisible(standardReveals);
+        checkVisible(timelineLeftReveals);
+        checkVisible(timelineRightReveals);
+        updateActiveLink();
+    }
+    window.addEventListener("scroll", reveal);
+    window.addEventListener("load", reveal);
+
+    // --- Carousel Logic ---
+    const track = document.getElementById('carouselTrack');
+    const container = document.getElementById('carouselContainer');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dots = document.querySelectorAll('.dot');
+    
+    let originalItems = Array.from(track.children);
+    let itemsCount = originalItems.length;
+    let currentIndex = itemsCount;
+    let isTransitioning = false;
+    let startX = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let isDragging = false;
+    let animationID = 0;
+
+    function initInfinite() {
+        originalItems.forEach(item => track.appendChild(item.cloneNode(true)));
+        originalItems.forEach(item => track.prepend(item.cloneNode(true)));
+        updatePosition();
+    }
+
+    function getItems() {
+        return Array.from(track.children);
+    }
+
+    function updatePosition(animate = false) {
+        const items = getItems();
+        if (!items.length) return;
+        const itemWidth = items[0].offsetWidth;
+        const containerWidth = container.offsetWidth;
+        const centerOffset = (containerWidth - itemWidth) / 2;
+        
+        const isRtl = document.documentElement.dir === 'rtl';
+        currentTranslate = (currentIndex * itemWidth * -1) + centerOffset;
+        prevTranslate = currentTranslate;
+        
+        if (!animate) {
+            track.style.transition = 'none';
+        } else {
+            track.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
+        }
+        setTransform(currentTranslate);
+        updateActiveState();
+    }
+
+    function setTransform(translate) {
+        track.style.transform = `translateX(${translate}px)`;
+    }
+
+    function updateActiveState() {
+        const items = getItems();
+        items.forEach((item, i) => {
+            if (i === currentIndex) {
+                item.classList.add('is-active');
+            } else {
+                item.classList.remove('is-active');
+            }
+        });
+        const dotIndex = currentIndex % itemsCount;
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('bg-primary', i === dotIndex);
+            dot.classList.toggle('w-6', i === dotIndex);
+            dot.classList.toggle('bg-outline-variant/30', i !== dotIndex);
+            dot.classList.toggle('w-3', i !== dotIndex);
+        });
+    }
+
+    function moveTo(index) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        currentIndex = index;
+        updatePosition(true);
+    }
+
+    nextBtn.addEventListener('click', () => moveTo(currentIndex + 1));
+    prevBtn.addEventListener('click', () => moveTo(currentIndex - 1));
+
+    track.addEventListener('transitionend', () => {
+        isTransitioning = false;
+        if (currentIndex >= itemsCount * 2) {
+            currentIndex = itemsCount;
+            updatePosition(false);
+        } else if (currentIndex < itemsCount) {
+            currentIndex = itemsCount * 2 - 1;
+            updatePosition(false);
+        }
+    });
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => moveTo(itemsCount + i));
+    });
+
+    // Touch/Mouse Events
+    container.addEventListener('touchstart', touchStart);
+    container.addEventListener('touchend', touchEnd);
+    container.addEventListener('touchmove', touchMove);
+    container.addEventListener('mousedown', touchStart);
+    container.addEventListener('mouseup', touchEnd);
+    container.addEventListener('mouseleave', touchEnd);
+    container.addEventListener('mousemove', touchMove);
+
+    function touchStart(event) {
+        if (isTransitioning) return;
+        isDragging = true;
+        startX = getPositionX(event);
+        track.style.transition = 'none';
+        animationID = requestAnimationFrame(animation);
+    }
+
+    function touchEnd() {
+        isDragging = false;
+        cancelAnimationFrame(animationID);
+        const movedBy = currentTranslate - prevTranslate;
+        const threshold = 100;
+        
+        if (movedBy < -threshold) moveTo(currentIndex + 1);
+        else if (movedBy > threshold) moveTo(currentIndex - 1);
+        else moveTo(currentIndex);
+    }
+
+    function touchMove(event) {
+        if (isDragging) {
+            const currentX = getPositionX(event);
+            currentTranslate = prevTranslate + currentX - startX;
+        }
+    }
+
+    function getPositionX(event) {
+        return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+    }
+
+    function animation() {
+        setTransform(currentTranslate);
+        if (isDragging) requestAnimationFrame(animation);
+    }
+
+    window.addEventListener('resize', () => updatePosition(false));
+    initInfinite();
+
+    // --- Contact Form Logic ---
+    const contactForm = document.getElementById('contactForm');
+    const toast = document.getElementById('success-toast');
+
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        toast.classList.add('show');
+        contactForm.reset();
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    });
+
+    // --- Mobile Menu Toggle ---
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinksContainer = document.getElementById('nav-links-container');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+        navLinksContainer.classList.toggle('hidden');
+        navLinksContainer.classList.toggle('flex');
+        navLinksContainer.classList.toggle('flex-col');
+        navLinksContainer.classList.toggle('absolute');
+        navLinks</script></body></html>
